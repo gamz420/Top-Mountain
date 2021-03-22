@@ -1,0 +1,148 @@
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [-16.063360, -9.046145],
+            zoom: 2.2,
+            controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
+        });
+
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #000000; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        everest = new ymaps.Placemark([27.98791898121186,86.92505985157287], {
+            hintContent: 'Эверест',
+            balloonContentHeader: "<div><img src='https://i2.milimaj.com/i/milliyet/75/0x0/5f6bf52355427f12e0b37bc4.jpg' alt='mountain' style='width: 50%'></div> Эверест (Джомолунгма)",
+            balloonContentBody: "<div>Высота: 8848</div><div>Горная система: Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/16px-Flag_of_Nepal.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 29 мая 1953 (Тенцинг Норгей и Эдмунд Хиллари) <div><div>Средняя цена: 3200000 руб.</div><div>Длительность восхождения: 60 дней</div><div>Всего восхождений: 9952 чел.</div><div>Смертей: 304 чел.</div><div>Процент смертности: 5,70%</div><a href='https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D0%BC%D0%BE%D0%BB%D1%83%D0%BD%D0%B3%D0%BC%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Азии'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        aconcagua = new ymaps.Placemark([-32.672917, -70.022348], {
+            hintContent: 'Аконкагуа',
+            balloonContentHeader: "<div><img src='https://cdn.newhampshireclimbing.com/wp-content/uploads/Aconcagua-960x960.jpg' alt='mountain' style='width: 50%'></div> Аконкагуа",
+            balloonContentBody: "<div>Высота: 6960,8</div><div>Горная система: Анды</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Flag_of_Argentina.svg/22px-Flag_of_Argentina.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 14 января 1897 (Маттиас Цурбригген) <div><div>Средняя цена: 200000 руб.</div><div>Длительность восхождения: 19 дней</div><div>Смертей: 148 чел.</div><a href='https://ru.wikipedia.org/wiki/%D0%90%D0%BA%D0%BE%D0%BD%D0%BA%D0%B0%D0%B3%D1%83%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Южной Америки'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        denali = new ymaps.Placemark([63.102135, -151.070736], {
+            hintContent: 'Денали',
+            balloonContentHeader: "<div><img src='https://www.oceaniacruises.com/Images/Experience%20Oceania/Enrichment/81604524408/denali-alaska.jpg' alt='mountain' style='width: 50%'></div> Денали",
+            balloonContentBody: "<div>Высота: 6190</div><div>Горная система: Аляскинский хребет </div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Flag_of_the_United_States.svg/22px-Flag_of_the_United_States.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 7 июня 1913 (Хадсон Стак, Гарри Карстенс, Уолтер Харпер, Роберт Тетум) <div><div>Средняя цена: 720000 руб.</div><div>Длительность восхождения: 24 дня</div><a href='https://ru.wikipedia.org/wiki/%D0%94%D0%B5%D0%BD%D0%B0%D0%BB%D0%B8_(%D0%B3%D0%BE%D1%80%D0%B0)' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Северной Америки'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        kilimanjaro = new ymaps.Placemark([-3.065171, 37.358483], {
+            hintContent: 'Килиманджаро',
+            balloonContentHeader: "<div><img src='https://cdn-image.departures.com/sites/default/files/1577723868/header-mount-kilimanjaro-KILIMANJARO1219.jpg' alt='mountain' style='width: 50%'></div> Килиманджаро",
+            balloonContentBody: "<div>Высота: 5881</div><div>Горная система: Восточно-Африканская рифтовая долина</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Flag_of_Tanzania.svg/22px-Flag_of_Tanzania.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 5 октября 1889 (Ганс Мейер, Людвиг Пуртшеллер)  <div><div>Средняя цена: 160000 руб.</div><div>Длительность восхождения: 7 дней</div><div>Всего восхождений: 	Более 30,000 в год.</div><div>Процент смертности: 0,0136%</div><a href='https://ru.wikipedia.org/wiki/%D0%9A%D0%B8%D0%BB%D0%B8%D0%BC%D0%B0%D0%BD%D0%B4%D0%B6%D0%B0%D1%80%D0%BE' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Африки'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        elbrus = new ymaps.Placemark([43.352603, 42.437710], {
+            hintContent: 'Эльбрус',
+            balloonContentHeader: "<div><img src='https://i.pinimg.com/originals/6c/9c/51/6c9c518caec0dd2782e1f5bb16a00359.jpg' alt='mountain' style='width: 50%'></div> Эльбрус",
+            balloonContentBody: "<div>Высота: 5642</div><div>Горная система: 	Кавказские горы</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/f3/Flag_of_Russia.svg/22px-Flag_of_Russia.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили  28 июля 1874 ( Ф. Гроув, Ф. Гарднер, Х. Уокер, П. Кнубел и А. Соттаев)  <div><div>Средняя цена:  34500 руб.</div><div>Длительность восхождения: 9 дней</div><div>Процент смертности: 15-20 душ в год</div><a href='https://ru.wikipedia.org/wiki/%D0%AD%D0%BB%D1%8C%D0%B1%D1%80%D1%83%D1%81' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Восточной Европы'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        montblanc = new ymaps.Placemark([45.830448, 6.866981], {
+            hintContent: 'Монблан',
+            balloonContentHeader: "<div><img src='https://www.mountain-forecast.com/system/images/5755/large/Mont-Blanc-de-Courmayeur.jpg?1344439477' alt='mountain' style='width: 50%'></div> Монблан",
+            balloonContentBody: "<div>Высота: 4809</div><div>Горная система: Западные Альпы</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Flag_of_France.svg/22px-Flag_of_France.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 8 августа 1786 (Шамони, Мишель-Габриэль Паккар и Жак Балм) <div><div>Средняя цена: 115000 руб.</div><div>Длительность восхождения: 8 дней</div><div>Всего восхождений: до 30 000 человек за сезон</div><div>Смертей: 102 чел.</div><a href='https://ru.wikipedia.org/wiki/%D0%9C%D0%BE%D0%BD%D0%B1%D0%BB%D0%B0%D0%BD' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Западной Европы'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        vinsonmassif = new ymaps.Placemark([-78.525501, -85.617356], {
+            hintContent: 'Массив Винсон',
+            balloonContentHeader: "<div><img src='http://hoopmanscience.pbworks.com/f/1414079445/Vinson%20Massif.jpg' alt='mountain' style='width: 50%'></div> Массив Винсон",
+            balloonContentBody: "<div>Высота: 4892</div><div>Горная система: Элсуэрт</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Flag_of_the_Antarctic_Treaty.svg/22px-Flag_of_the_Antarctic_Treaty.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 18 декабря 1966 (Барри Корбет, Джон Эванс, Вильям Лонг, Питер Шенинг) <div><div>Средняя цена: 3260000 руб.</div><div>Длительность восхождения: 17 дней</div><a href='https://ru.wikipedia.org/wiki/%D0%92%D0%B8%D0%BD%D1%81%D0%BE%D0%BD_(%D0%BC%D0%B0%D1%81%D1%81%D0%B8%D0%B2)' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Антарктиды'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        jaya = new ymaps.Placemark([-4.083754, 137.182754], {
+            hintContent: 'Джая',
+            balloonContentHeader: "<div><img src='https://static.educalingo.com/img/en/800/puncak-jaya.jpg' alt='mountain' style='width: 50%'></div> Джая",
+            balloonContentBody: "<div>Высота: 4884</div><div>Горная система: Маоке</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Flag_of_Indonesia.svg/22px-Flag_of_Indonesia.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 1962 (Г.Харрер, Б.Хуйзинга, Р.Киппакс, Ф.Темпл.) <div><div>Средняя цена: 1060000 руб.</div><div>Длительность восхождения: 10 дней</div><a href='https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%B0%D1%8F' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Океании'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        kosciuszko = new ymaps.Placemark([-36.448448, 148.269768], {
+            hintContent: 'Косцюшко',
+            balloonContentHeader: "<div><img src='http://beautyofexercise.com.au/wp-content/uploads/Kosciuszko.jpg' alt='mountain' style='width: 50%'></div> Косцюшко",
+            balloonContentBody: "<div>Высота: 2228</div><div>Горная система: Большой Водораздельный хребет</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b9/Flag_of_Australia.svg/22px-Flag_of_Australia.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 1840 (Павел Эдмунд Стшелецкий)<div><div>Средняя цена: 170000 руб.</div><div>Длительность восхождения: 10 дней</div><a href='https://ru.wikipedia.org/wiki/%D0%9A%D0%BE%D1%81%D1%86%D1%8E%D1%88%D0%BA%D0%BE_(%D0%B3%D0%BE%D1%80%D0%B0)' target='_blank'>Подробнее</a></div>",
+            iconContent: 'Вершина Австралии'
+        }, {
+            preset: 'islands#blackStretchyIcon',
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+
+    myMap.geoObjects
+    .add(everest)
+    .add(aconcagua)
+    .add(denali)
+    .add(kilimanjaro)
+    .add(elbrus)
+    .add(montblanc)
+    .add(vinsonmassif)
+    .add(jaya)
+    .add(kosciuszko)
+    }
+</script>
+
+
+<div class="center">
+    <div id="map" class="divmap"></div>
+</div>

@@ -1,0 +1,115 @@
+body {
+  margin: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  box-sizing: border-box;
+  background-image: url(https://i.imgur.com/3Nx85jY.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 52px);
+  margin: 0;
+}
+
+.centerButton {
+  width: 50vw;
+  height: 10vh;
+  background-color: white;
+  border: none;
+  font-size: 26px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 25px 3px black;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  outline: none;
+}
+
+.centerButton:hover {
+  background-color: black;
+  box-shadow: 0px 0px 25px 3px white;
+  color: white;
+}
+
+.centerButton:active {
+  box-shadow: 0px 0px 0px 0px white;
+  transform: translateY(10px);
+}
+
+.divmap {
+  margin: 0;
+  width: 90vw;
+  height: 80vh;
+}
+
+.center2 {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 52px);
+  margin: 0;
+}
+
+.centerButton2 {
+  width: 50vw;
+  height: 15vh;
+  background-color: white;
+  border: none;
+  font-size: 26px;
+  border-radius: 16px;
+  box-shadow: 0px 0px 25px 3px black;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: 0.3s;
+  outline: none;
+  margin: 100px;
+}
+
+.centerButton2:hover {
+  background-color: black;
+  box-shadow: 0px 0px 25px 3px white;
+  color: white;
+}
+
+.centerButton2:active {
+  box-shadow: 0px 0px 0px 0px white;
+  transform: translateY(10px);
+}
+
+.field {
+  width: 20%;
+  margin: 10px;
+}
+
+.control {
+  box-shadow: 0px 0px 15px 3px black;
+  border-radius: 5px;
+  margin: 10px;
+}
+
+.centerForm {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: calc(100% - 52px);
+}
+
+label {
+  color: white;
+  font-size: xx-large;
+  text-shadow: 0px 0px 8px black;
+}

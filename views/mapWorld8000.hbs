@@ -1,0 +1,246 @@
+<script type="text/javascript">
+    ymaps.ready(init);
+    function init(){
+        var myMap = new ymaps.Map("map", {
+            center: [32.858222, 84.608479],
+            zoom: 6,
+            controls: ['zoomControl', 'typeSelector', 'fullscreenControl']
+        });
+
+        MyIconContentLayout = ymaps.templateLayoutFactory.createClass(
+            '<div style="color: #FFFFFF; font-weight: bold;">$[properties.iconContent]</div>'
+        ),
+
+        everest = new ymaps.Placemark([27.98791898121186,86.92505985157287], {
+            hintContent: 'Эверест',
+            balloonContentHeader: "<div><img src='https://images11.popmeh.ru/upload/custom/784/784eda6b6c8130a2fcbbf8c17a203a3f.jpg' alt='mountain' style='width: 50%'></div> Эверест (Джомолунгма)",
+            balloonContentBody: "<div>Высота: 8848</div><div>Горная система: Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/16px-Flag_of_Nepal.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 29 мая 1953 (Тенцинг Норгей и Эдмунд Хиллари) <div><div>Средняя цена: 3200000 руб.</div><div>Длительность восхождения: 60 дней</div><div>Всего восхождений: 9952 чел.</div><div>Смертей: 304 чел.</div><div>Процент смертности: 5,70%</div><a href='https://ru.wikipedia.org/wiki/%D0%94%D0%B6%D0%BE%D0%BC%D0%BE%D0%BB%D1%83%D0%BD%D0%B3%D0%BC%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: '1'
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        k2 = new ymaps.Placemark([35.880944, 76.512364], {
+            hintContent: 'K2',
+            balloonContentHeader: "<div><img src='https://e3.365dm.com/21/02/768x432/skynews-k2-pakistan-missing_5266729.jpg?20210209111244' alt='mountain' style='width: 50%'></div> К2 (Чогори)",
+            balloonContentBody: "<div>Высота: 8614</div><div>Горная система: Каракорум</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/22px-Flag_of_Pakistan.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 31 июля 1954 (Лино Лачеделли и Акилле Компаньони) <div><div>Средняя цена: 2500000 руб.</div><div>Длительность восхождения: 75 дней</div><div>Всего восхождений: 284 чел.</div><div>Смертей: 66 чел.</div><div>Процент смертности: 23%</div><a href='https://ru.wikipedia.org/wiki/%D0%A7%D0%BE%D0%B3%D0%BE%D1%80%D0%B8' target='_blank'>Подробнее</a></div>",
+            iconContent: '2'
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        kangchenjunga = new ymaps.Placemark([27.703369, 88.145811], {
+            hintContent: "Канченджанга",
+            balloonContentHeader: "<div><img src='https://www.deccanherald.com/sites/dh/files/article_images/2019/05/26/800px-Kangchenjunga-from-Gangtok-1558862922.jpg' alt='mountain' style='width: 50%'></div> Канченджанга",
+            balloonContentBody: "<div>Высота: 8586</div><div>Горная система: 	Гималаи</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Flag_of_India.svg/22px-Flag_of_India.svg.png' alt='country'></a></div>",
+            balloonContentFooter: "Первый раз покорили 25 мая 1955 (Джордж Бэндом и Джо Браун) <div><div>Средняя цена: 1920000 руб.</div><div>Длительность восхождения: 51 день</div><div>Всего восхождений: 209 чел.</div><div>Смертей: 40 чел.</div><div>Процент смертности: 19,14%</div><a href='https://ru.wikipedia.org/wiki/%D0%9A%D0%B0%D0%BD%D1%87%D0%B5%D0%BD%D0%B4%D0%B6%D0%B0%D0%BD%D0%B3%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: '3'
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        lhotse = new ymaps.Placemark([27.968925, 86.932728], {
+            hintContent: "Лхоцзе",
+            balloonContentHeader: "<div><img src='https://omgnepal.com/wp-content/uploads/2020/08/mount_lhotse_expedition_146787569278.jpg' alt='mountain' style='width: 50%'></div> Лхоцзе",
+            balloonContentBody: "<div>Высота: 8516</div><div>Горная система: 	Гималаи</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/22px-Flag_of_the_People%27s_Republic_of_China.svg.png'></a></div>",
+            balloonContentFooter: "Первый раз покорили 18 мая 1956 (Э. Райсс и Ф. Лухзингер) <div><div>Средняя цена: 1220000 руб.</div><div>Длительность восхождения: 57 день</div><div>Всего восхождений: 321 чел.</div><div>Смертей: 11 чел.</div><div>Процент смертности: 3,43%</div><a href='https://ru.wikipedia.org/wiki/%D0%9B%D1%85%D0%BE%D1%86%D0%B7%D0%B5' target='_blank'>Подробнее</a></div>",
+            iconContent: '4'
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        makalu = new ymaps.Placemark([27.887027, 87.087495], {
+            hintContent: 'Макалу',
+            balloonContentHeader: "<div><img src='https://himalayansteps.com/wp-content/uploads/2018/06/Mount-Makalu-Peak.jpeg' alt='mountain' style='width: 50%'></div> Макалу",
+            balloonContentBody: "<div>Высота: 8485</div><div>Горная система: 	Гималаи</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/22px-Flag_of_the_People%27s_Republic_of_China.svg.png'></a></div>",
+            balloonContentFooter: "Первый раз покорили 15 мая 1955 (Ж. Кузи и Л. Террай) <div><div>Средняя цена: 1200000 руб.</div><div>Длительность восхождения: 50 день</div><div>Всего восхождений: 234 чел.</div><div>Смертей: 26 чел.</div><div>Процент смертности: 11,11%</div><a href='https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BA%D0%B0%D0%BB%D1%83' target='_blank'>Подробнее</a></div>",
+            iconContent: '5',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        chooyu = new ymaps.Placemark([28.097616, 86.657431], {
+            hintContent: 'Чо-Ойю',
+            balloonContentHeader: "<div><img src='https://i.pinimg.com/originals/34/43/00/34430010f95d3b2b81c7f542df39ce59.jpg' alt='mountain' style='width: 50%'></div> Чо-Ойю",
+            balloonContentBody: "<div>Высота: 8188</div><div>Горная система: 	Гималаи</div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/22px-Flag_of_the_People%27s_Republic_of_China.svg.png'></a></div>",
+            balloonContentFooter: "Первый раз покорили 19 октября 1954 (Й. Йёхлер, Х. Тихи, Пасанг Дава Лама) <div><div>Средняя цена: 2030000 руб.</div><div>Длительность восхождения: 47 день</div><div>Всего восхождений:	2 668 чел.</div><div>Смертей: 39 чел.</div><div>Процент смертности: 1,46%</div><a href='https://ru.wikipedia.org/wiki/%D0%A7%D0%BE-%D0%9E%D0%B9%D1%8E' target='_blank'>Подробнее</a></div>",
+            iconContent: '6',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        dhaulagiri = new ymaps.Placemark([28.702533, 83.487663], {
+            hintContent: 'Дхаулагири',
+            balloonContentHeader: "<div><img src='https://i.pinimg.com/originals/41/ff/fc/41fffc6c187d321010ca9b9f40d61fdf.jpg' alt='mountain' style='width: 50%'></div> Дхаулагири",
+            balloonContentBody: "<div>Высота: 8167</div><div>Горная система: 	Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/16px-Flag_of_Nepal.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 13 мая 1960 (Макс Айзелин) <div><div>Средняя цена: 1330000 руб.</div><div>Длительность восхождения: 48 день</div><div>Всего восхождений:	358 чел.</div><div>Смертей: 58 чел.</div><div>Процент смертности: 16,20 %</div><a href='https://ru.wikipedia.org/wiki/%D0%94%D1%85%D0%B0%D1%83%D0%BB%D0%B0%D0%B3%D0%B8%D1%80%D0%B8' target='_blank'>Подробнее</a></div>",
+            iconContent: '7',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        manaslu = new ymaps.Placemark([28.552359, 84.557231], {
+            hintContent: 'Манаслу',
+            balloonContentHeader: "<div><img src='https://4sport.ua/_upl/2/1507/methode%252Ftimes%252Fprod%252Fweb%252Fbin%252F76144b20-a1de-11e7-8955-1ad2a9a7928d.jpg' alt='mountain' style='width: 50%'></div> Манаслу",
+            balloonContentBody: "<div>Высота: 8156</div><div>Горная система: 	Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/16px-Flag_of_Nepal.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 9 мая 1956 (Т. Иманиси и Г. Норбу.) <div><div>Средняя цена: 1150000 руб.</div><div>Длительность восхождения: 40 день</div><div>Всего восхождений:	297 чел.</div><div>Смертей: 53 чел.</div><div>Процент смертности: 17,85 %</div><a href='https://ru.wikipedia.org/wiki/%D0%9C%D0%B0%D0%BD%D0%B0%D1%81%D0%BB%D1%83' target='_blank'>Подробнее</a></div>",
+            iconContent: '8',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        nangaparbat = new ymaps.Placemark([35.241362, 74.589099], {
+            hintContent: 'Нангапарбат',
+            balloonContentHeader: "<div><img src='https://sun9-61.userapi.com/impf/c851120/v851120980/39cdc/l2nnOjvIeqU.jpg?size=807x418&quality=96&sign=267db26b4008f0e4b77cd20c41a6ca8b&type=album' alt='mountain' style='width: 50%'></div> Нангапарбат",
+            balloonContentBody: "<div>Высота: 8125</div><div>Горная система: 	Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/22px-Flag_of_Pakistan.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 3 июля 1953 (Герман Буль) <div><div>Средняя цена: 600000 руб.</div><div>Длительность восхождения: 36 день</div><div>Всего восхождений:	287 чел.</div><div>Смертей: 64 чел.</div><div>Процент смертности: 22,30 %</div><a href='https://ru.wikipedia.org/wiki/%D0%9D%D0%B0%D0%BD%D0%B3%D0%B0%D0%BF%D0%B0%D1%80%D0%B1%D0%B0%D1%82' target='_blank'>Подробнее</a></div>",
+            iconContent: '9',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        annapurna1 = new ymaps.Placemark([28.594567, 83.810774], {
+            hintContent: 'Аннапурна 1',
+            balloonContentHeader: "<div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/Annapurna_Base_Camp_Range_1.jpg/330px-Annapurna_Base_Camp_Range_1.jpg' alt='mountain' style='width: 50%'></div> Аннапурна 1",
+            balloonContentBody: "<div>Высота: 8091</div><div>Горная система: 	Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9b/Flag_of_Nepal.svg/16px-Flag_of_Nepal.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 3 июня 1950 (Морис Эрцог и Луи Лашеналь) <div><div>Средняя цена: 1000000 руб.</div><div>Длительность восхождения: 30 день</div><div>Всего восхождений:	153 чел.</div><div>Смертей: 58 чел.</div><div>Процент смертности: 37,91 %</div><a href='https://ru.wikipedia.org/wiki/%D0%90%D0%BD%D0%BD%D0%B0%D0%BF%D1%83%D1%80%D0%BD%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: '10',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        gasherbrumI = new ymaps.Placemark([35.724733, 76.694630], {
+            hintContent: 'Гашербрум 1',
+            balloonContentHeader: "<div><img src='https://www.climbing.com/.image/t_share/MTM1MjQ3ODk4NzIzMDEwNTcw/gasherbrum-i-from-the-northwest-showin.jpg' alt='mountain' style='width: 50%'></div> Гашербрум 1",
+            balloonContentBody: "<div>Высота: 8080</div><div>Горная система: Каракорум </div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/22px-Flag_of_Pakistan.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 5 июля 1958 (Питер «Пит» Киттильсби Шёнинг и Эндрю Джон Кауфман II)<div><div>Средняя цена: 740000 руб.</div><div>Длительность восхождения: 54 день</div><div>Всего восхождений:	265 чел.</div><div>Смертей: 25 чел.</div><div>Процент смертности: 9,43 %</div><a href='https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%88%D0%B5%D1%80%D0%B1%D1%80%D1%83%D0%BC_I' target='_blank'>Подробнее</a></div>",
+            iconContent: '11',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        broadpeak = new ymaps.Placemark([35.812951, 76.563444], {
+            hintContent: 'Броуд-Пик',
+            balloonContentHeader: "<div><img src='https://www.alanarnette.com/blog/wp-content/uploads/2018/07/Broad-peak.jpg' alt='mountain' style='width: 50%'></div> Броуд-Пик",
+            balloonContentBody: "<div>Высота: 8051</div><div>Горная система: Каракорум </div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/22px-Flag_of_Pakistan.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 9 июня 1957 (Фриц Винтерштеллер и Маркус Шмук)<div><div>Средняя цена: 25000000 руб.</div><div>Длительность восхождения: 50 дней</div><div>Всего восхождений:	359 чел.</div><div>Смертей: 19 чел.</div><div>Процент смертности: 5,29 %</div><a href='https://ru.wikipedia.org/wiki/%D0%91%D1%80%D0%BE%D1%83%D0%B4-%D0%9F%D0%B8%D0%BA' target='_blank'>Подробнее</a></div>",
+            iconContent: '12',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        gasherbrumII = new ymaps.Placemark([35.757666, 76.652651], {
+            hintContent: 'Гашербрум II',
+            balloonContentHeader: "<div><img src='https://peakfinder.ru/image/original/77_gasherbrum_ii.jpg' alt='mountain' style='width: 50%'></div> Гашербрум II",
+            balloonContentBody: "<div>Высота: 8035</div><div>Горная система: Каракорум </div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/3/32/Flag_of_Pakistan.svg/22px-Flag_of_Pakistan.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 7 июля 1956 (Ф. Моравек, Г. Вилленпарт, З. Ларх)<div><div>Средняя цена: 360000 руб.</div><div>Длительность восхождения: 53 дней</div><div>Всего восхождений:	836 чел.</div><div>Смертей: 19 чел.</div><div>Процент смертности:	2,27 %</div><a href='https://ru.wikipedia.org/wiki/%D0%93%D0%B0%D1%88%D0%B5%D1%80%D0%B1%D1%80%D1%83%D0%BC_II' target='_blank'>Подробнее</a></div>",
+            iconContent: '13',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+        shishapangma = new ymaps.Placemark([28.355817, 85.776845], {
+            hintContent: 'Шишабангма',
+            balloonContentHeader: "<div><img src='https://www.sherpamountaineering.com/wp-content/uploads/2015/01/Sishapangma.jpg' alt='mountain' style='width: 50%'></div> Шишабангма",
+            balloonContentBody: "<div>Высота: 8027</div><div>Горная система: Гималаи</div><div><img src='https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Flag_of_the_People%27s_Republic_of_China.svg/22px-Flag_of_the_People%27s_Republic_of_China.svg.png'></div>",
+            balloonContentFooter: "Первый раз покорили 2 мая 1964 (китайская экспедиция во главе с Сю Цзином)<div><div>Средняя цена: 3000000 руб.</div><div>Длительность восхождения: 42 дней</div><div>Всего восхождений:	274 чел.</div><div>Смертей: 23 чел.</div><div>Процент смертности:	8,39 %</div><a href='https://ru.wikipedia.org/wiki/%D0%A8%D0%B8%D1%88%D0%B0%D0%B1%D0%B0%D0%BD%D0%B3%D0%BC%D0%B0' target='_blank'>Подробнее</a></div>",
+            iconContent: '14',
+        }, {
+            iconLayout: 'default#imageWithContent',
+            iconImageHref: 'images/mount2.png',
+            iconImageSize: [35, 43],
+            iconImageOffset: [-15, -63],
+            iconContentOffset: [12, 25],
+            iconContentLayout: MyIconContentLayout
+        });
+
+    myMap.geoObjects
+    .add(everest)
+    .add(k2)
+    .add(kangchenjunga)
+    .add(lhotse)
+    .add(makalu)
+    .add(chooyu)
+    .add(dhaulagiri)
+    .add(manaslu)
+    .add(nangaparbat)
+    .add(annapurna1)
+    .add(gasherbrumI)
+    .add(broadpeak)
+    .add(gasherbrumII)
+    .add(shishapangma);
+        
+    }
+</script>
+
+
+<div class="center">
+    <div id="map" class="divmap"></div>
+</div>
