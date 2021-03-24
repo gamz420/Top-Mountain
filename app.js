@@ -16,9 +16,8 @@ app.use(express.static(path.join(process.env.PWD, "public")));
 
 app.use("/", index);
 
-app.listen(process.env.PORT, () => {
+app.listen(process.env.PORT || 3000, () => {
   console.log("Server OK");
 });
-
 
 module.exports = app;
