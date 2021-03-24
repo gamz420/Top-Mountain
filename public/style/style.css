@@ -113,3 +113,21 @@ label {
   font-size: xx-large;
   text-shadow: 0px 0px 8px black;
 }
+
+@media (max-width: 368px) {
+  .centerButton {
+    font-size: 22px;
+  }
+  .centerButton2 {
+    font-size: 15px;
+  }
+}
+
+@media (min-width: 368px) and (max-width: 768px) {
+  .centerButton {
+    font-size: 22px;
+  }
+  .centerButton2 {
+    font-size: 19px;
+  }
+}
